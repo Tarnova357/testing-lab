@@ -28,7 +28,8 @@ class RentalService:
 
     def calculate_total(self, daily_rate, quantity, days, premium=False):
         validate(daily_rate, quantity, days, premium)
-        subtotal = daily_rate * quantity * days
+        # Додали помилку для демонстрації
+        subtotal = daily_rate * quantity * days + 1
         discount = 0
         return subtotal - subtotal * discount // 100
 
